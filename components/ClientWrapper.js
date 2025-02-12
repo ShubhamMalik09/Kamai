@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Header from "./Header";
 
 export default function ClientWrapper({ children }) {
     const [darkmode, setDarkmode] = useState(false);
   
     return (
       <>
-        {children}
-        <footer>
+        <Header/>
+        <main className="min-h-screen mt-16">
+            {children}
+        </main>
+        <footer className="mt-14">
           <div className={`flex flex-col ${darkmode ? "text-black bg-white" : "text-white bg-black"}`}>
             <div className="grid grid-cols-4 p-5">
               <img src={darkmode ? "kamai-black.png" : "kamai-white.png"} className="w-48 pt-3 pl-5"/>
