@@ -92,5 +92,27 @@ body {
 }
 
 .hero-image.scrolled {
-  transform: rotateX(0deg) scale(1) translatey(40px);
+  transform: rotateX(0deg) scale(1) translateY(40px);
+}
+
+.swing {
+	transform-origin: top center;
+	animation: swing 4s ease infinite;
+}
+@keyframes swing {
+	20% { transform: rotate(0.7deg); }	
+	40% { transform: rotate(-0.7deg); }
+	60% { transform: rotate(0.7deg); }	
+	80% { transform: rotate(-0.7deg); }	
+	100% { transform: rotate(0deg); }
+}
+
+.gelatine {
+  animation: gelatine 5s infinite;
+}
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.98, 1.03); }
+  50% { transform: scale(1.03, 0.98); }
+  75% { transform: scale(0.99, 1.01); }
 }
