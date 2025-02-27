@@ -14,7 +14,14 @@ export default function Home() {
 
     const handleScroll = ()=>{
         const scrollPosition = window.scrollY;
-        const scrollThreshold = 1500;
+        let scrollThreshold;
+        if (window.innerWidth < 480) {
+          scrollThreshold = 2800; // For very small screens (phones in portrait mode)
+        } else if (window.innerWidth < 768) {
+          scrollThreshold = 2650; // For small mobile screens
+        } else {
+          scrollThreshold = 1750; // Default for larger screens (desktop, tablets)
+        }
 
         if(scrollPosition > scrollThreshold){
             imageElement.classList.add("scrolled");
@@ -102,7 +109,7 @@ export default function Home() {
 
       <section className="py-20 overflow-hidden">
         <div className='hero-image-wrapper'>
-            <div ref={imageRef} className='hero-image'>
+            <div ref={imageRef} className='hero-image mx-10'>
                 <Image src={"/banner.jpg"} width={980} height={640} alt='dashboard preview' className='rounded-lg shadow-2xl border mx-auto' priority></Image>
             </div>
         </div>

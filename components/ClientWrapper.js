@@ -9,7 +9,7 @@ export default function ClientWrapper({ children }) {
     return (
       <>
         <Header/>
-        <main className="min-h-screen mt-16">
+        <main className="min-h-screen mt-20">
             {children}
         </main>
         <footer className="mt-14">

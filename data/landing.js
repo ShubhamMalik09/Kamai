@@ -52,6 +52,11 @@ export const featuresData = [
         title: "Advanced Analytics",
         description:"Get detailed insights into your spending patterns with AI-powered analystics",
     },
+    {
+        icon: <BarChart3 className="h-8 w-8 text-blue-600"/>,
+        title: "Advanced Analytics",
+        description:"Get detailed insights into your spending patterns with AI-powered analystics",
+    },
 ]
 
 export const howItWorkData = [
