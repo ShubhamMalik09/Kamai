@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "./Header";
+import { Toaster } from "./ui/sonner";
 
 export default function ClientWrapper({ children }) {
     const [darkmode, setDarkmode] = useState(false);
@@ -12,6 +13,9 @@ export default function ClientWrapper({ children }) {
         <main className="min-h-screen mt-20">
             {children}
         </main>
+
+        <Toaster richColors/>
+
         <footer className="mt-14">
           <div className={`flex flex-col ${darkmode ? "text-black bg-white" : "text-black bg-white"}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 p-5 gap-4">
