@@ -19,7 +19,7 @@ export default function ClientWrapper({ children }) {
         <footer className="mt-14">
           <div className={`flex flex-col ${darkmode ? "text-black bg-white" : "text-black bg-white"}`}>
             <div className="grid grid-cols-2 md:grid-cols-4 p-5 gap-4">
-              <img src={darkmode ? "kamai-white.png" : "kamai-black.png"} className="w-48 pt-3 pl-5"/>
+              <img src={darkmode ? "kamai-white.png" : "/kamai-black.png"} className="w-48 pt-3 pl-5"/>
               <div className="flex flex-col gap-1">
                 <p className="font-semibold pb-2">Products & pricing</p>
                 <p><span className="opacity-80 hover:cursor-pointer hover:opacity-[93]">Pricing</span></p>
