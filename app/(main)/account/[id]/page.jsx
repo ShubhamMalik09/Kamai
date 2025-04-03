@@ -6,13 +6,16 @@ import { BarLoader } from 'react-spinners';
 
 const AccountsPage = async({params}) => {
 
+    if(!params?.id) {
+        return <BarLoader className='mt-4' width={"100%"} color='#9333ea'/>
+    } 
     const accountData = await getAccountWithTransactions(params.id);
 
-    if(!accountData){
-        notFound();
+    if (!accountData) {
+        notFound(); // ✅ This will correctly trigger the 404 page
     }
-    const { transactions, ...account } = accountData;
 
+    const { transactions, ...account } = accountData;
 
   return (
     <div className='space-y-8 px-5'>
