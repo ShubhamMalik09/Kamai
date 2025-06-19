@@ -10,19 +10,15 @@ const nextConfig = {
     },
     async headers() {
         return [
-        {
-            source: '/(.*)', // Match all routes
+            {
+            source: '/(.*)',
             headers: [
-            {
-                key: 'X-Frame-Options',
-                value: 'ALLOW-FROM https://teams.microsoft.com'
-            },
-            {
+                {
                 key: 'Content-Security-Policy',
-                value: 'frame-ancestors https://teams.microsoft.com'
-            }
+                value: "frame-ancestors 'self' https://teams.microsoft.com"
+                }
             ]
-        }
+            }
         ];
     }
 };
