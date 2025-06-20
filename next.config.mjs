@@ -17,6 +17,10 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: "frame-ancestors 'self' https://*.teams.microsoft.com https://teams.microsoft.com",
           },
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL',
+          },
         ],
       },
     ]

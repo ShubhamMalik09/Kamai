@@ -33,6 +33,33 @@ export default function Home() {
     return ()=>window.removeEventListener("scroll", handleScroll);
   },[]);
 
+  useEffect(() => {
+
+    const isInTeams = window.self !== window.top;
+
+    if (!isInTeams) {
+      console.log("Not running inside Teams – skipping Teams SDK");
+      return;
+    }
+    // Load Teams SDK
+    const script = document.createElement('script')
+    script.src = 'https://res.cdn.office.net/teams-js/2.0.0/js/MicrosoftTeams.min.js'
+    script.onload = () => {
+      if (window.microsoftTeams) {
+        window.microsoftTeams.app.initialize().then(() => {
+          console.log('Teams app initialized successfully')
+        }).catch((error) => {
+          console.error('Error initializing Teams app:', error)
+        })
+      }
+    }
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <div>
       <HeroSection/>
