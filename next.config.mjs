@@ -11,20 +11,20 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/(.*)', // apply to all routes
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://*.teams.microsoft.com https://teams.microsoft.com",
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL', // Allow Teams to iframe your app
           },
           {
-            key: 'X-Frame-Options',
-            value: 'ALLOWALL',
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://*.teams.microsoft.com https://*.skype.com;",
           },
         ],
       },
-    ]
+    ];
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
